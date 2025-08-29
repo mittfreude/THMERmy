@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+#app {
+  display: flex;
+  height: 100vh;
+}
+#sidebar {
+  width: 200px;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#editor {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+.block {
+  display: flex;
+  align-items: center;
+  margin-left: var(--indent, 0px);
+}
+.block .collapse {
+  cursor: pointer;
+  width: 16px;
+  text-align: center;
+  visibility: hidden;
+}
+.block.has-children:hover .collapse {
+  visibility: visible;
+}
+.block .task-toggle {
+  cursor: pointer;
+  width: 16px;
+  text-align: center;
+}
+.block .task-checkbox {
+  margin-right: 4px;
+}
+.block .text {
+  flex: 1;
+  outline: none;
+}
+.block.done .text {
+  text-decoration: line-through;
+  color: #888;
+}
+.block .chip {
+  background: #eef;
+  border-radius: 4px;
+  padding: 0 4px;
+  margin-left: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.block .chip.priority {
+  background: #fee;
+}
+.block .chip.tag {
+  background: #efe;
+}
+.hidden {
+  display: none;
+}
